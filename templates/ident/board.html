@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block titulo %}Direção{% endblock titulo %}
+
+{% block titre %}Direção{% endblock titre %}
+
+{% block content %}
+
+<div class="content">
+
+{{ club.name }}
+{{ user.id }}
+
+<p>Alterar dados de Direção e Sócios</p>
+
+<form method="post" action="/">
+
+{% csrf_token %}
+
+<table>
+<tr><td>Presidente:</td><td>{{ form.president }}</td></tr>
+<tr><td>Secretário:</td><td>{{ form.secretary }}</td></tr>
+<tr><td>Tesoureiro:</td><td>{{ form.treasurer }}</td></tr>
+<tr><td>Data de eleição:</td><td>{{ form.election }}</td></tr>
+<tr><td>Termo do mandato:</td><td>{{ form.end }}</td></tr>
+<tr><td>Sócios-quotas em dia:</td><td>{{ form.ontime }}</td></tr>
+<tr><td>Sócios-quotas em atraso:</td><td>{{ form.arrears }}</td></tr>
+</table>
+
+<p><input type="submit" value="submit" /></p>
+
+</form>
+
+</div>
+
+
+{% endblock content %}

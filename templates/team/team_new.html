@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block titulo %}Registar nova equipa{% endblock titulo %}
+{% block titre %}Registar nova equipa{% endblock titre %}
+
+{% block content %}
+
+<div class="content">
+
+<form action="/team_new/" method="post">
+
+{% csrf_token %}
+
+<p>Designação da equipa: {{ form.name }}</p>
+
+<p>Modalidade: {{ form.modal }}</p>
+
+<p>Idade: {{ form.age }}</p>
+
+<p>Sexo: {{ form.sex }}</p>
+
+<p>Nível competitivo: {{ form.level }}</p>
+
+<p>Disciplina: {{ form.discipline }}</p>
+
+<p>Treinador/Monitor: {{ form.coach }}</p>
+
+<p>Formação do treinador: {{ form.coach_level }}</p>
+
+<p>Ano do curso de formação: {{ form.couse_yr }}</p>
+
+<p>Resultados no ano anterior: {{ form.results }}</p>
+
+<p><input type="submit" value="submit" /></p>
+
+</form>
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block titulo %}Iniciar Sessão{% endblock titulo %}
+
+{% block titre %}Iniciar Sessão{% endblock titre %}
+
+{% block content %}
+
+<div class="content">
+
+
+<h2>Iniciar Sessão</h2><br />
+
+{% if form.errors %}
+<p>O utilizador e palavra-passe não estão corretos.<br /> Por favor, tente de novo.</p>
+{% endif %}
+
+<form method="post" action="{% url django.contrib.auth.views.login %}">
+{% csrf_token %}
+<table>
+<tr>
+    <td align="right">{{ form.username.label_tag }}: </td>
+    <td>{{ form.username }}</td>
+</tr>
+<tr>
+    <td>{{ form.password.label_tag }}: </td>
+    <td>{{ form.password }}</td>
+</tr>
+<tr>
+    <td colspan="2" align="center"><input type="submit" value="Iniciar Sessão" style="width: 90px;"/></td>
+</tr>
+</table>
+
+<input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+</div>
+
+{% endblock content %}

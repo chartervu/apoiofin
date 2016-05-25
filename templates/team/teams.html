@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block titulo %}Equipas{% endblock titulo %}
+
+{% block titre %}Equipas{% endblock titre %}
+
+{% block content %}
+
+<div class="content">
+
+{% if teams %}
+    Número de equipas <ul><li> {{ teams|length }}</li></ul>
+{% else %}
+    Não estão registadas equipas.
+{% endif %}
+
+<br />
+
+{% for team in teams %}
+
+<p>Consultar dados da equipa n.º:&nbsp; <a href="{{ team.get_absolute_url }}">{{ forloop.counter }}</a></p>
+
+{% endfor %}
+<hr />
+<a href="/team_new/">registar nova equipa</a>
+
+</div>
+{% endblock content %}

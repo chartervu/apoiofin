@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="chartervu" />
+<meta name="description" content="Uma demonstração de um calendário para gestão
+de instalações desportivas." />
+<meta http-equiv="Content-Language" content="pt-pt" />
+<meta name="keywords" content="calendário, instalação, desporto, horário, pavilhão" />
+<meta name="generator" content="Studio 3 http://aptana.com/" />
+<meta name="author" content="chartervu" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+
+<title>
+{% block titulo %}Ficha-Demonstração: Apoio ao Movimento Desportivo{% endblock titulo %}
+</title>
+
+<link rel="stylesheet" href="{{ MEDIA_URL }}css/style.css" type="text/css" media="screen" />
+
+{% block scripts %}
+{% endblock scripts %}
+
+</head>
+
+
+<body>
+{% block header %}
+    <div class="wrapper">
+      <div class="container">
+
+        <div class="icon">
+          <img alt="" src="{{ MEDIA_URL }}images/hand_logo.gif" width="140" height="98" />
+        </div>
+
+        <div id="title">
+          <h1><br />
+            Ficha-Demonstração: Apoio ao Movimento Desportivo<br />
+            {% block titre %}{% endblock titre %}
+          </h1>
+       </div>
+
+        <div id="navigation">
+          <ul>
+            <li>
+              <a href="/">Início</a>
+            </li> 	  
+            <li>
+			{% if user.is_authenticated %}
+            <a href="/ident/{{ request.user.id }}">Identidade</a>
+            {% else %}
+            <a href="#">Identidade</a>
+            {% endif %}
+            </li>
+            <li>
+			{% if user.is_authenticated %}
+            <a href="/board/{{ request.user.id }}">Direção</a>
+            {% else %}
+            <a href="#">Direção</a>
+            {% endif %}
+            </li>
+			<li>
+			{% if user.is_authenticated %}
+            <a href="/budget/{{ request.user.id }}">Orçamento</a>
+            {% else %}
+            <a href="#">Orçamento</a>
+            {% endif %}
+			</li>
+            <li>
+			{% if user.is_authenticated %}
+            <a href="/teams/">Equipas</a>
+            {% else %}
+            <a href="#">Equipas</a>
+            {% endif %}
+            </li>
+          </ul>
+        </div>
+
+        <br class="clear" />
+
+        <div id="body">
+
+          <div class="sidebar">
+		  	{% if not user.is_authenticated %}
+		  	<p>Utilizador: convidado</p>
+		  	{% else %}
+		  	<p>Utilizador: {{ request.user.username }}</p>
+		  	{% endif %}
+            <h3>Páginas</h3>
+			<div class="content">
+				<ul class="links">
+				  <li>
+				  	{% if not user.is_authenticated %}
+				  	<a href="/accounts/login/">Iniciar Sessão</a>
+				  	{% else %}
+				  	<a href="/accounts/logout/">Terminar Sessão</a>
+				  	{% endif %}
+				  </li>
+				  <li><a href="/admin/">Gestão da Ficha</a></li>
+				  <li><a href="/wiki/">Wiki</a></li>
+				  <li><a href="/contact/">Contatos</a></li>
+				</ul>
+			</div>
+			<br />
+			
+
+			<div class="content">
+			</div>
+
+			<br class="clear" />
+
+          </div>
+
+{% endblock header %}
+
+{% block content %}
+{% endblock content %}
+
+</div>
+
+<br class="clear" />
+
+<div id="footer">
+
+<div id="footBody">
+
+<div class="content showcase">
+
+</div>
+
+<div class="clear"></div>
+
+<div id="copyright">
+
+<div class="container">
+<table id="design">
+<tr>
+<td align="left">design adaptado de: <a href="http://aaron.ganschow.us/">Aaron Ganschow</a><td>
+<td></td>
+<td align="right">&copy; Copyright 2011
+<a href="http://my.opera.com/chartervu/blog/">chartervu</a>
+</td></tr>
+</table>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<script type="text/javascript">
+var sc_project=6869481; 
+var sc_invisible=1; 
+var sc_security="0a0b2c3e"; 
+</script>
+
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter.js">
+</script>
+<noscript>
+<div class="statcounter">
+<a title="free web stats" href="http://statcounter.com/" target="_blank">
+<img class="statcounter" src="http://c.statcounter.com/6869481/0/0a0b2c3e/1/" alt="free web stats" >
+</a>
+</div>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block titulo %}Equipa: descrição{% endblock titulo %}
+{% block titre %}Equipa: descrição{% endblock titre %}
+
+{% block content %}
+<div class="content">
+
+<p>{{ club.name }}</p>
+<p>Código da equipa: &nbsp;{{ team.id }}</p>
+
+<form method="post" action="/team/{{ team.id }}/">
+
+{% csrf_token %}
+
+<table>
+<tr><td>Designação:</td><td>{{ form.name }}</td></tr>
+<tr><td>Modalidade:</td><td>{{ form.modal }}</td></tr>
+<tr><td>Grupo etário:</td><td>{{ form.age }}</td></tr>
+<tr><td>Sexo:</td><td>{{ form.sex }}</td></tr>
+<tr><td>Nível competitivo:</td><td>{{ form.level }}</td></tr>
+<tr><td>Disciplina:</td><td>{{ form.discipline }}</td></tr>
+<tr><td>Treinador:</td><td>{{ form.coach }}</td></tr>
+<tr><td>Grau de formação do treinador:</td><td>{{ form.coach_level }}</td></tr>
+<tr><td>Ano do curso de formação:</td><td>{{ form.course_yr }}</td></tr>
+<tr><td>Resultados obtidos:</td><td>{{ form.results }}</td></tr>
+</table>
+
+<p><input type="submit" value="submit" /></p>
+
+</form>
+<a href="/team_new/">registar nova equipa</a>
+</div>
+{% endblock content %}

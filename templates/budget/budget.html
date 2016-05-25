@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block titulo %}Orçamento{% endblock titulo %}
+
+{% block titre %}Orçamento{% endblock titre %}
+
+{% block content %}
+
+<div class="content">
+
+{{ club.name }}
+
+<p>Alterar dados de orçamento</p>
+
+<form method="post" action="/">
+
+{% csrf_token %}
+
+{{ budget.id }}
+
+<table>
+
+<tr><td>Despesas totais:</td><td>{{ form.tot_exp }}</td></tr>
+<tr><td>Despesas instalações:</td><td>{{ form.facilities }}</td></tr>
+<tr><td>Despesas de atividades:</td><td>{{ form.activities }}</td>
+<tr><td>Despesas de outras atividades:</td><td>{{ form.other_activities }}</td></tr>
+<tr><td>Outras despesas:</td><td>{{ form.other_expend }}</td></tr>
+<tr><td>Despesas de investimento:</td><td>{{ form.expend_invest }}</td></tr>
+<tr><td colspan="2">&nbsp;</td></tr>
+<tr><td>Receitas totais:</td><td>{{ form.total_rev }}</td></tr>
+<tr><td>Receitas de mensalidades:</td><td>{{ form.rev_fees }}</td></tr>
+<tr><td>Receitas de publicidade:</td><td>{{ form.rev_sponsor }}</td></tr>
+<tr><td>Outras receitas</td><td>{{ form.other_revs }}</td></tr>
+<tr><td>Receitas de subsídios</td><td>{{ form.rev_subsidies }}</td></tr>
+<tr><td colspan="2">&nbsp;</td></tr>
+</table>
+
+<p><input type="submit" value="submit" /></p>
+<p>Valores em &euro;.</p>
+
+</form>
+
+</div>
+
+{% endblock content %}

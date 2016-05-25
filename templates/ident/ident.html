@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block titulo %}Identificação{% endblock titulo %}
+
+{% block titre %}Identificação{% endblock titre %}
+
+{% block content %}
+
+<div class="content">
+
+{{ club.name }}
+{{ user.id }}
+<p>Alterar dados gerais de identificação</p>
+
+<form method="post" action="/">
+
+{% csrf_token %}
+
+<table>
+<tr><td>Morada:</td><td>{{ form.address }}</td></tr>
+<tr><td>Código postal:</td><td>{{ form.postal_code }}</td></tr>
+<tr><td>Telefones:</td><td>{{ form.phones }}</td></tr>
+<tr><td>Telemóveis:</td><td>{{ form.mobiles }}</td></tr>
+<tr><td>Email:</td><td>{{ form.email }}</td></tr>
+<tr><td>NIF:</td><td>{{ form.tax_number }}</td></tr>
+<tr><td>Data do estatuto:</td><td>{{ form.statute }}</td></tr>
+<tr><td>Utilidade pública:</td><td>{{ form.util_pub }}</td></tr>
+<tr><td>Data da utilidade pública:</td><td>{{ form.up_date }}</td></tr>
+<tr><td>Observações:</td><td>{{ form.observations }}</td></tr>
+</table>
+
+<p><input type="submit" value="submit" /></p>
+
+</form>
+
+</div>
+
+
+{% endblock content %}
