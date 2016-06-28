@@ -18,6 +18,9 @@ de instalações desportivas." />
 <link rel="stylesheet" href="{{ MEDIA_URL }}css/style.css" type="text/css" media="screen" />
 
 {% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.8/react.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.8/react-dom.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
 {% endblock scripts %}
 
 </head>
@@ -43,7 +46,7 @@ de instalações desportivas." />
           <ul>
             <li>
               <a href="/">Início</a>
-            </li> 	  
+            </li>
             <li>
 			{% if user.is_authenticated %}
             <a href="/ident/{{ request.user.id }}">Identidade</a>
@@ -101,7 +104,7 @@ de instalações desportivas." />
 				</ul>
 			</div>
 			<br />
-			
+
 
 			<div class="content">
 			</div>
@@ -148,9 +151,9 @@ de instalações desportivas." />
 
 </div>
 <script type="text/javascript">
-var sc_project=6869481; 
-var sc_invisible=1; 
-var sc_security="0a0b2c3e"; 
+var sc_project=6869481;
+var sc_invisible=1;
+var sc_security="0a0b2c3e";
 </script>
 
 <script type="text/javascript" src="http://www.statcounter.com/counter/counter.js">

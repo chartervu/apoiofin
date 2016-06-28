@@ -3,9 +3,20 @@
 
 {% block content %}
 <div class="content">
-
-<h2>Início</h2>
-
+<div id="area"></div>
+  <script type="text/babel">
+    var Inicio = React.createClass({
+      render: function(){
+        return(
+          <h2>Início</h2>
+        )
+      }
+    });
+    ReactDOM.render(
+      <Inicio />,
+      document.getElementById('area')
+    );
+  </script>
 <br />
 
 <p>
@@ -16,7 +27,7 @@ Esta Ficha-Demonstração é um exemplo demonstrativo das potencialidades
 <hr />
 
 <p>
-Este portal encontra-se em desenvolvimento pelo que algumas caraterísticas 
+Este portal encontra-se em desenvolvimento pelo que algumas caraterísticas
 apenas serão incluídas em futuras atualizações.
 </p>
 
@@ -32,7 +43,7 @@ apenas serão incluídas em futuras atualizações.
 	<li>acesso ao "backend" proporcionado pelo Django (ver 'Gestão da Ficha').</li>
 </ul>
 
-<p>O desenvolvimento desta ferramenta tem entre outros os seguintes 
+<p>O desenvolvimento desta ferramenta tem entre outros os seguintes
 	objetivos, a apresentar em futuras formas:
 </p>
 
@@ -40,7 +51,7 @@ apenas serão incluídas em futuras atualizações.
 	<li>endereços em forma de "slug",</li>
 	<li>remover registos de equipas,</li>
 	<li>exportação de registo em CSV para envio através de email,</li>
-	<li>proporcionar o acesso de diversos utilizadores ao mesmo registo, para permitir 
+	<li>proporcionar o acesso de diversos utilizadores ao mesmo registo, para permitir
 		a introdução de dados de equipas,</li>
 	<li>exportação de registo em PDF para envio através de email,</li>
 	<li>funcionalidades dinâmicas,</li>
